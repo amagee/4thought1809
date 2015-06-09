@@ -6,6 +6,7 @@ names = {
     "base.html": "index.html",
     "timesheet.html": "timesheet.html",
     "resourcing.html": "resourcing.html",
+    "cashflow.html": "cashflow.html",
 }
 
 for src, dest in names.items():
