@@ -9,9 +9,19 @@
         background-color: white;
       }
 
+      .jumbotron, .container > h1 {
+        max-width: 660px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       .jumbotron p, .jumbotron li {
         font-size: 16px;
         line-height: 1.6em;
+      }
+
+      .jumbotron p {
+        text-align: center;
       }
 
       .jumbotron {
@@ -21,6 +31,11 @@
       
       .jumbotron ul {
         padding-right: 30%;
+      }
+      
+      .container h1 {
+        margin-top: 30px;
+        text-align: center;
       }
     </style>
   </head>
@@ -90,7 +105,7 @@
 
 
     <div class="jumbotron">
-      <p>
+      <p style="text-align: left;">
         Not just timesheeting...
       </p>
 
@@ -127,7 +142,6 @@
 
   </div>
 
-    
 
     <script>
       var myFirebaseRef = new Firebase("https://amber-torch-6641.firebaseio.com");
