@@ -1,0 +1,19 @@
+{
+  "name": "4thought",
+  "version": "0.0.0",
+  "homepage": "https://github.com/amagee/4thought1809",
+  "authors": [
+    "Andrew Magee <amagee@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  }
+}
