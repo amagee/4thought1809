@@ -9,19 +9,21 @@
   <body>
     <script src="/4thought1809/bower_components/jquery/dist/jquery.js"></script>
     <script src="/4thought1809/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script>
-    </script>
+    <script src="https://cdn.firebase.com/js/client/2.2.6/firebase.js"></script>
+    <script src="/4thought1809/bower_components/jquery/dist/jquery.js"></script>
 
     <div class="container">
       <h1>
         Coincraft
       </h1>
 
-      <div class="jumbotron">
-        <h1>
-          Practice &amp; Project Management For Architects
-        </h1>
-      </div>
+      {% block content1 %}
+        <div class="jumbotron">
+          <h1>
+            Practice &amp; Project Management For Architects
+          </h1>
+        </div>
+      {% endblock %}
 
       <div class="jumbotron">
         <h1>
@@ -72,6 +74,23 @@
           on time and on budget with your projects.
         </p>
       </div>
+
+
+      <div class="jumbotron">
+        <h1>Sign up</h1>
+        <div class="sign_up_form_container">
+          <div class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email address" name="email" id="email">
+            </div>
+            <button type="submit" class="btn btn-large btn-success submit_button">Sign up!</button>
+          </div>
+        </div>
+        <div class="thanks_for_signing_up_container" style="display: none;">
+          <p>Thanks for signing up!</p>
+        </div>
+      </div>
+
     </div>
 
 
@@ -369,5 +388,24 @@ body {
         </div>
         <!-- /PRICING-TABLE -->
     </div>
+
+    <script>
+      var myFirebaseRef = new Firebase("https://amber-torch-6641.firebaseio.com");
+      var responses = myFirebaseRef.child("responses");
+
+      $(document).ready(function() {
+        $(".submit_button").click(function() {
+          responses.push({
+            email: $("#email").val()
+          }, function() {
+            $(".sign_up_form_container").hide();
+            $(".thanks_for_signing_up_container").show();
+          });
+        });
+      });
+    </script>
+
+
+
   </body>
 </html>
