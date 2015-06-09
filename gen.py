@@ -4,7 +4,8 @@ env = Environment(loader=FileSystemLoader('templates'))
 
 names = {
     "base.html": "index.html",
-    "product1.html": "product1.html"
+    "timesheet.html": "timesheet.html",
+    "resourcing.html": "resourcing.html",
 }
 
 for src, dest in names.items():

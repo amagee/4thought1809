@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/4thought1809/bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"></link> 
+    <link rel="stylesheet" href="/4thought1809/bower_components/bootstrap/dist/css/bootstrap-theme.css" type="text/css"></link> 
+    <style type="text/css">
+      .jumbotron {
+        background-color: white;
+      }
+
+      .jumbotron p, .jumbotron li {
+        font-size: 16px;
+        line-height: 1.6em;
+      }
+
+      .jumbotron {
+        padding: 20px 0 !important;
+        margin-bottom: 15px !important;
+      }
+      
+      .jumbotron ul {
+        padding-right: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="/4thought1809/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/4thought1809/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.6/firebase.js"></script>
+    <script src="/4thought1809/bower_components/jquery/dist/jquery.js"></script>
+
+    
+  <div class="container">
+    <div>
+      <img src="/4thought1809/images/header.jpg" style="max-width: 100%;">
+    </div>
+
+    <h1>
+      Simple timesheets for architects
+    </h1>
+
+    <div class="jumbotron">
+      <div style="margin-left: 10%; margin-right: 10%;">
+        <img src="/4thought1809/images/screenshot.png" style="max-width: 100%;">
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <p>
+        4Thought's timesheet tool provides beautiful and simple to use
+        interface for all you staff members to record their timesheets
+        against your projects and phases. With our online system timesheets
+        can be recorded anywhere anytime.
+      </p>
+    </div>
+
+    <div class="jumbotron">
+      <div style="margin-left: 10%; margin-right: 10%;">
+        <img src="/4thought1809/images/coincraft-mac.jpg" style="max-width: 100%;">
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <p>
+        4Thought's powerful reporting tools allow you to find all the historic
+        data you need for your architecture practice - whether it be for paying
+        your staff, managing your costs or planning for future fee proposals.
+      </p>
+    </div>
+
+    <div class="jumbotron" style="background-color: #F1F1EB;">
+  <div class="sign_up_form_container">
+    <div style="padding-left: 10px;">
+      <div class="form-group" style="font-weight: bold;">
+        Just $20 per user per month
+      </div>
+      <div class="form-inline">
+        Start your free 14-day trial:
+        <input type="email" class="form-control" placeholder="Email address" name="email" id="email">
+        <button type="submit" class="btn btn-large btn-success submit_button">Sign up!</button>
+      </div>
+    </div>
+  </div>
+  <div class="thanks_for_signing_up_container" style="display: none;">
+    <p>Thanks for signing up!</p>
+  </div>
+  <div style="clear: both;"></div>
+</div>
+
+
+    <div class="jumbotron">
+      <p>
+        Not just timesheeting...
+      </p>
+
+      <ul>
+        <li>Simple Timesheeting</li>
+        <li>Billable/un-billable time/cost analysis</li>
+        <li>Reporting</li>
+        <li>Staff scheduling</li>
+        <li>Budget Tracking</li>
+        <li>Cash Flow Forecasting</li>
+        <li>Accounting system integration</li>
+        <li>On the cloud (works on Mac, Windows &amp; Linux)</li>
+      </ul>
+    </div>
+
+    <div class="jumbotron" style="background-color: #F1F1EB;">
+  <div class="sign_up_form_container">
+    <div style="padding-left: 10px;">
+      <div class="form-group" style="font-weight: bold;">
+        Just $20 per user per month
+      </div>
+      <div class="form-inline">
+        Start your free 14-day trial:
+        <input type="email" class="form-control" placeholder="Email address" name="email" id="email">
+        <button type="submit" class="btn btn-large btn-success submit_button">Sign up!</button>
+      </div>
+    </div>
+  </div>
+  <div class="thanks_for_signing_up_container" style="display: none;">
+    <p>Thanks for signing up!</p>
+  </div>
+  <div style="clear: both;"></div>
+</div>
+
+  </div>
+
+    
+
+    <script>
+      var myFirebaseRef = new Firebase("https://amber-torch-6641.firebaseio.com");
+      var responses = myFirebaseRef.child("responses");
+
+      $(document).ready(function() {
+        $(".submit_button").click(function() {
+          responses.push({
+            email: $("#email").val()
+          }, function() {
+            $(".sign_up_form_container").hide();
+            $(".thanks_for_signing_up_container").show();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
