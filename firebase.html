@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="" type="text/css"></link> 
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+    Hello
+    <input type="text" name="hello" id="hello">
+    <button class="submit_button">Submit</button>
+
+    <script src="https://cdn.firebase.com/js/client/2.2.6/firebase.js"></script>
+    <script src="/4thought1809/bower_components/jquery/dist/jquery.js"></script>
+    <script>
+      var myFirebaseRef = new Firebase("https://amber-torch-6641.firebaseio.com");
+      var responses = myFirebaseRef.child("responses");
+
+      $(".submit_button").click(function() {
+        responses.push({
+          email: $("#hello").val()
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
